@@ -174,9 +174,9 @@ class EufySecurityDataUpdateCoordinator(DataUpdateCoordinator):
             )
 
     async def async_driver_connect(self):
-        await self.async_send_message(json.dumps(START_LISTENING_MESSAGE))
-        # await asyncio.sleep(5)
         await self.async_send_message(json.dumps(SET_API_SCHEMA))
+        # await asyncio.sleep(5)
+        await self.async_send_message(json.dumps(START_LISTENING_MESSAGE))
         # await asyncio.sleep(5)
         await self.async_send_message(json.dumps(DRIVER_CONNECT_MESSAGE))
         # await asyncio.sleep(5)
